@@ -1,0 +1,22 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+  <div class="col-lg-10">
+    <h2><%= object %></h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for :controller => 'front/accounts', :action => 'index' %>">Front</a>
+      </li>
+      <li>
+        <a href="<%= url_for :controller => params[:controller], :action => 'index' %>">
+          <%= action.nil? ? '<strong>'.html_safe + object + '</strong>'.html_safe : object %>
+        </a>
+      </li>
+      <% unless action.nil? %>
+        <li class="active">
+          <strong><%= action %></strong>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>

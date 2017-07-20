@@ -1,0 +1,29 @@
+<table id="accounts" class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Numero de Cuenta</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.id %></td>
+        <td><%= account.buyer_id.nil? ? 'Aun no se sabe ;)' : account.buyer_id %></td>
+        <td>
+          <%= link_to '<span class="glyphicon glyphicon-search"></span>'.html_safe,  front_account_path(account), class: "btn btn-primary btn-circle", data: { "toggle" => "tooltip" }, title: "Show" %>
+          <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe,  edit_front_account_path(account), class: "btn btn-warning btn-circle", data: { "toggle" => "tooltip" }, title: "Edit" %>
+          <%= link_to '<span class="glyphicon glyphicon-remove"></span>'.html_safe, front_account_path(account), method: :delete, data: { toggle: "tooltip", confirm: "Estas seguro?" }, title: "Delete", class: "btn btn-danger btn-circle" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>ID</th>
+      <th>Numero de Cuenta</th>
+      <th>Acciones</th>
+    </tr>
+  </tfoot>
+</table>

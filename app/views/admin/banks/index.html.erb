@@ -1,0 +1,20 @@
+<%= render 'breadcrumb', object: "Bancos", action: nil%>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= link_to 'Nuevo', new_admin_bank_path, class: "btn btn-w-m btn-primary"%>
+    </div>
+  </div>
+  <% @banks.each do |bank| %>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5><%= bank.name %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

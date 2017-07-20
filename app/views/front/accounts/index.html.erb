@@ -1,0 +1,20 @@
+<%= render 'breadcrumb', object: "Cuentas", action: nil%>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= link_to 'Nuevo', new_front_account_path, class: "btn btn-w-m btn-primary"%>
+    </div>
+  </div>
+  <% @accounts.each do |account| %>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5><%= account.account_number %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
